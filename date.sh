@@ -8,5 +8,5 @@
 START_TIME=$(date +%S)
 sleep 10
 END_TIME=$(date +%S)
-TOTAL_EXEC_TIME=(($END_TIME-$START_TIME))
+TOTAL_EXEC_TIME=($END_TIME - $START_TIME)
 echo "Total Execution Time is: $TOTAL_EXEC_TIME"
