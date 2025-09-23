@@ -11,6 +11,6 @@ sleep 5
 
 END_TIME=$(date +%s)
 
-TOTAL_EXEC_TIME=(($END_TIME-$START_TIME))
+TOTAL_EXEC_TIME=($END_TIME-$START_TIME)
 
 echo "Total Execution Time is: $TOTAL_EXEC_TIME Seconds"
