@@ -6,7 +6,7 @@
 #In this date command,for more options to display the time by using "date --help".
 
 START_TIME=$(date +%S)
-sleep 10
+sleep 15
 END_TIME=$(date +%S)
 TOTAL_EXEC_TIME=($END_TIME - $START_TIME)
 echo "Total Execution Time is: $TOTAL_EXEC_TIME"
