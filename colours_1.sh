@@ -41,5 +41,5 @@ if [ $? -ne 0 ]; then
     dnf install python -y
     VALIDATE $? "Python"
 else
-    echo -e"Python already exist...$Y SKIPPING $W"
+    echo -e "Python already exist...$Y SKIPPING $W"
 fi
