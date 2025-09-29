@@ -11,3 +11,24 @@ aws ec2 run-instances --image-id ami-09c813fb71547fc4f --instance-type t3.micro 
 #To get Instance id
 
 aws ec2 run-instances --image-id ami-09c813fb71547fc4f --instance-type t3.micro --security-group-ids sg-0583a004f3724dab2 --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Test-server}]' --query 'Instances[0].InstanceId' --output text
+
+Updating DNS Record set 
+
+aws route53 change-resource-record-sets \
+--hosted-zone-id $ZONE_ID \
+--change-batch '
+{
+    "Comment": "Updating record set"
+    ,"Changes": [{
+    "Action"              : "UPSERT"
+    ,"ResourceRecordSet"  : {
+        "Name"              : "'$RECORD_NAME'"
+        ,"Type"             : "A"
+        ,"TTL"              : 1
+        ,"ResourceRecords"  : [{
+            "Value"         : "'$IP'"
+        }]
+      }
+    }]
+}
+'
